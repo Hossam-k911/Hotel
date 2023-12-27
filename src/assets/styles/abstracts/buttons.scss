@@ -1,0 +1,28 @@
+@import "./variables.scss";
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  box-shadow: 0px 8px 15px 0px rgba(50, 82, 223, 0.3);
+  height: 3rem;
+
+  font-size: 1.0625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  &.primary {
+    background-color: $main-btn;
+    color: $white-color;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.outline-primary {
+    border: 1px solid $main-btn;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

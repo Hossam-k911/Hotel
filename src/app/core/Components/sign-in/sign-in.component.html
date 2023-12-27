@@ -1,0 +1,93 @@
+<section>
+  <div class="container">
+    <div class="row pt-2">
+      <div class="col-md-6">
+        <div class="col-12 pt-3">
+          <img src="assets/images/logo.svg" />
+        </div>
+
+        <div class="login-card">
+          <h3>Sign in</h3>
+
+          <h5>If you don’t have an account register</h5>
+
+          <h5>
+            You can
+            <a routerLink="/core/signup"> Register Here !</a>
+          </h5>
+
+          <form [formGroup]="signinForm">
+            <div class="input-group input-group-lg mt-5">
+              <label class="w-100 custom-label" for="email"
+                >Email Address</label
+              >
+              <input
+                formControlName="email"
+                id="email"
+                type="email"
+                class="form-control rounded"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+                placeholder="Please type here ..."
+              />
+            </div>
+            <div
+              class="alert alert-danger p-2 my-2"
+              *ngIf="
+                signinForm.get('email')?.touched &&
+                signinForm.get('email')?.status == 'INVALID'
+              "
+            >
+              <h5 *ngIf="signinForm.get('email')?.getError('required')">
+                mail is missing
+              </h5>
+              <h5 *ngIf="signinForm.get('email')?.getError('email')">
+                Hossam@Upskilling.com
+              </h5>
+            </div>
+
+            <div class="input-group input-group-lg mt-5 position-relative">
+              <label class="w-100 custom-label" for="pass">Password</label>
+              <input
+                formControlName="password"
+                id="pass"
+                [type]="hide ? 'password' : 'text'"
+                class="form-control rounded"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+                placeholder="Please type here ..."
+              />
+              <span (click)="hide = !hide" class="eye-icon"
+                ><i [ngClass]="hide ? 'fa fa-eye-slash' : 'fa fa-eye'"></i
+              ></span>
+            </div>
+            <div
+              class="alert alert-danger p-2 my-2"
+              *ngIf="
+                signinForm.get('password')?.touched &&
+                signinForm.get('password')?.status == 'INVALID'
+              "
+            >
+              <h5 *ngIf="signinForm.get('password')?.getError('required')">
+                password is missing
+              </h5>
+              <h5 *ngIf="signinForm.get('password')?.getError('pattern')">
+                wrong password pattern
+              </h5>
+            </div>
+            <div class="d-flex justify-content-end my-3">
+              <a class="forget-link" routerLink="/core/reset-password">
+                Forgot Password?</a
+              >
+            </div>
+
+            <button type="button" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="assets/images/login-img.png" />
+      </div>
+    </div>
+  </div>
+</section>
