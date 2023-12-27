@@ -16,7 +16,7 @@
             <a routerLink="/core/signup"> Register Here !</a>
           </h5>
 
-          <form [formGroup]="signinForm">
+          <form [formGroup]="signinForm" (ngSubmit)="login()">
             <div class="input-group input-group-lg mt-5">
               <label class="w-100 custom-label" for="email"
                 >Email Address</label
@@ -81,7 +81,13 @@
               >
             </div>
 
-            <button type="button" class="btn btn-primary w-100">Login</button>
+            <button
+              type="button"
+              class="btn btn-primary w-100"
+              (click)="login()"
+            >
+              Login
+            </button>
           </form>
         </div>
       </div>
