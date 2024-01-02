@@ -24,14 +24,13 @@ export class AdminGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    debugger;
     if (
       localStorage.getItem('token') !== null &&
       localStorage.getItem('role') == 'admin'
     ) {
       return true;
     } else {
-      this._router.navigate(['/core']);
+      this._router.navigate(['/auth']);
       return false;
     }
   }

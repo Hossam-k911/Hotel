@@ -21,14 +21,15 @@ export class CoreService {
   // resetWithEmail(email) {
   //   return this.http.post(`Users/Reset/Request`, email);
   // }
-  // resetPassword(userData) {
-  //   return this.http.post(`Users/Reset`, userData);
-  // }
+  resetPassword(userData: any) {
+    return this.http.post(`users/reset-password`, userData);
+  }
 
   getProfile() {
     let encoded: any = localStorage.getItem('token');
     let decoded: any = jwtDecode(encoded);
     localStorage.setItem('role', decoded.role);
+    localStorage.setItem('userId', decoded._id);
     this.getRole();
   }
   getRole() {
@@ -40,14 +41,11 @@ export class CoreService {
     }
   }
 
-  handleRegister(data: any): Observable<any> {
-    return this.http.post('Users/Register', data);
+  signUp(data: any): Observable<any> {
+    return this.http.post('users', data);
   }
-  verifyEmail(data: IVerify): Observable<any> {
-    return this.http.put('Users/verify', data);
-  }
-}
-export interface IVerify {
-  email: string;
-  code: string;
+
+  // verifyEmail(data: IVerify): Observable<any> {
+  //   return this.http.put('Users/verify', data);
+  // }
 }

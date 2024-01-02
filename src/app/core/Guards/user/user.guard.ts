@@ -30,7 +30,7 @@ export class UserGuard implements CanActivate {
     ) {
       return true;
     } else {
-      this._router.navigate(['/core']);
+      this._router.navigate(['/auth']);
       return false;
     }
   }

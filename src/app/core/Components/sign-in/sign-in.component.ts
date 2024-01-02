@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
-    private core: CoreService // private core: CoreService, // public dialog: MatDialog, // private toastr: ToastrService
+    private core: CoreService
   ) {
     this.signinForm = this.formBuilder.group({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -48,7 +48,6 @@ export class SignInComponent implements OnInit {
       },
       complete: () => {
         this.core.getProfile();
-        // this.router.navigate(['/features']);
         if (localStorage.getItem('role') === 'admin') {
           this.router.navigate(['/admin']);
         } else if (localStorage.getItem('role') === 'user') {
