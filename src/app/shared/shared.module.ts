@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 import { SharedRoutingModule } from './shared-routing.module';
 import { HeaderComponent } from './Components/header/header.component';
 import { SideBarComponent } from './Components/side-bar/side-bar.component';
@@ -28,6 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    MatPaginatorModule,
+    MatTableModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -40,6 +43,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    MatPaginatorModule,
+    MatTableModule,
   ],
 })
 export class SharedModule {}

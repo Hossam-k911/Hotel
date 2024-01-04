@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'admin',
     canActivate: [AdminGuard, RolesGuard],
     loadChildren: () =>
-      import('./features/Admin/admin/admin.module').then((m) => m.AdminModule),
+      import('./features/Admin/admin.module').then((m) => m.AdminModule),
   },
   {
     path: 'landing-page',

@@ -1,0 +1,65 @@
+<section>
+  <div class="container">
+    <table class="table table-striped">
+      <thead class="table-header">
+        <th>Room No</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Capacity</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let room of rooms">
+          <td>{{ room.roomNumber }}</td>
+          <td>
+            <!-- {{ room.description }} -->
+            <img [src]="'http://upskilling-egypt.com:3000/' + room.images[0]" />
+          </td>
+          <td>{{ room.price }}</td>
+          <td>{{ room.discount }}</td>
+          <td>{{ room.capacity }}</td>
+          <td>
+            <div *ngFor="let item of room.facilities">
+              <span> {{ item }}</span>
+            </div>
+          </td>
+          <td>
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button (click)="viewRoom(room)" mat-menu-room>
+                <mat-icon>visibility</mat-icon>
+                <span>View</span>
+              </button>
+              <button mat-menu-room [routerLink]="['/admin/rooms/', room._id]">
+                <mat-icon>edit-square</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button (click)="deleteRoom(room)" mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <mat-paginator
+        [length]="rooms?.totalNumberOfRecords"
+        [pageSizeOptions]="[5, 10, 50, 100]"
+        [pageSize]="10"
+        (page)="handlePageEvent($event)"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</section>
