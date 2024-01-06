@@ -1,0 +1,64 @@
+@import "/src/assets/styles/layout.scss";
+
+.table-header {
+  width: 100%;
+  border-radius: 15px;
+  background-color: #e2e5eb;
+  text-align: center;
+  color: #1f263e;
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+th {
+  padding: 1rem;
+}
+tbody {
+  text-align: center;
+}
+
+.table-button {
+  display: block;
+  border: none;
+  // border-radius: 4px;
+  width: -webkit-fill-available;
+  padding: 10px 15px;
+  box-shadow: none;
+  height: auto;
+  font-size: 1.0625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  mat-icon {
+    margin-right: 16px;
+  }
+}
+button {
+  &.primary {
+    border-radius: 8px;
+    background: #203fc7;
+  }
+}
+
+.rooms-header {
+  h2 {
+    color: #1f263e;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  h3 {
+    color: #323c47;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.mat-mdc-menu-content {
+  width: min-content;
+}

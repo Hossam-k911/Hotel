@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { AdminService } from '../../services/admin.service';
+import { AdminService } from '../../../../services/admin.service';
 @Component({
   selector: 'app-rooms-dashboard',
   templateUrl: './rooms-dashboard.component.html',
@@ -26,7 +26,6 @@ export class RoomsDashboardComponent {
     this._AdminService.getRooms(Query).subscribe((res: any) => {
       this.rooms = res.data.rooms;
       this.totalCount = res.data.totalCount;
-      debugger;
     });
   }
 

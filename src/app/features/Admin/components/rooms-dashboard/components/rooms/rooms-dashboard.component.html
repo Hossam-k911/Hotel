@@ -1,5 +1,17 @@
-<section>
+<section class="mt-5">
   <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between">
+        <div class="rooms-header">
+          <h2>Rooms Table Details</h2>
+          <h3>You can check all details</h3>
+        </div>
+        <button routerLink="add-room" class="btn btn-primary w-25">
+          <span class="px-2">Add New Room </span>
+        </button>
+      </div>
+    </div>
+
     <table class="table table-striped">
       <thead class="table-header">
         <th>Room No</th>
@@ -27,6 +39,7 @@
           </td>
           <td>
             <button
+              class="table-button"
               mat-icon-button
               [matMenuTriggerFor]="menu"
               aria-label="Example icon-button with a menu"
@@ -34,15 +47,27 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-              <button (click)="viewRoom(room)" mat-menu-room>
+              <button
+                class="table-button"
+                (click)="viewRoom(room)"
+                mat-menu-room
+              >
                 <mat-icon>visibility</mat-icon>
                 <span>View</span>
               </button>
-              <button mat-menu-room [routerLink]="['/admin/rooms/', room._id]">
+              <button
+                class="table-button"
+                mat-menu-room
+                [routerLink]="['/admin/rooms/', room._id]"
+              >
                 <mat-icon>edit-square</mat-icon>
                 <span>Edit</span>
               </button>
-              <button (click)="deleteRoom(room)" mat-menu-item>
+              <button
+                class="table-button"
+                (click)="deleteRoom(room)"
+                mat-menu-item
+              >
                 <mat-icon>delete</mat-icon>
                 <span>Delete</span>
               </button>
