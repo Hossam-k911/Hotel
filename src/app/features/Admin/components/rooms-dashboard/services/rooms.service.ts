@@ -9,7 +9,7 @@ export class RoomsService {
   constructor(private _HttpClient: HttpClient) {}
 
   addRoom(data: any): Observable<any> {
-    return this._HttpClient.post('admin/rooms', data);
+    return this._HttpClient.post('rooms', data);
   }
 
   getFacilities(): Observable<any> {
