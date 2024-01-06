@@ -13,10 +13,29 @@
 
           <h5>
             You can
-            <a style="color: #eb5148" routerLink="/core/signin">
+            <a style="color: #eb5148" routerLink="/auth/signin">
               Login Here !</a
             >
           </h5>
+
+          <div class="col-md-3">
+            <ngx-dropzone (change)="onSelect($event)" [multiple]="false">
+              <ngx-dropzone-label *ngIf="!imgSrc">
+                <i class="fa-solid fa-arrow-up-from-bracket d-block"></i>
+                Upload
+              </ngx-dropzone-label>
+
+              <ngx-dropzone-image-preview
+                class="w-100"
+                ngProjectAs="ngx-dropzone-preview"
+                *ngFor="let f of files"
+                [removable]="true"
+                [file]="f"
+                (removed)="onRemove(f)"
+              >
+              </ngx-dropzone-image-preview>
+            </ngx-dropzone>
+          </div>
 
           <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
             <!-- user name start -->

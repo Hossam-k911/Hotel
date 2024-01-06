@@ -1,1 +1,11 @@
 @import "/src/assets/styles/layout.scss";
+
+ngx-dropzone {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  justify-content: center;
+  align-items: center;
+}

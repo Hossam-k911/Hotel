@@ -18,6 +18,8 @@ export class SignUpComponent {
   signUpForm: FormGroup = new FormGroup({});
   hide: boolean = true;
   hide2: boolean = true;
+  imgSrc: any;
+  files: File[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -48,9 +50,9 @@ export class SignUpComponent {
         ),
       ]),
       role: new FormControl('user'),
-      profileImage: new FormControl(
-        'https://www.pinterest.com/pin/6896205670733157/'
-      ),
+      // profileImage: new FormControl(
+      //   'https://www.pinterest.com/pin/6896205670733157/'
+      // ),
     });
   }
 
@@ -64,15 +66,28 @@ export class SignUpComponent {
       signUpData.append(key, this.signUpForm.value[key]);
     }
 
+    if (this.imgSrc !== null) {
+      signUpData.append('profileImage', this.imgSrc, this.imgSrc.name);
+    }
     debugger;
     this.core.signUp(signUpData).subscribe({
       next: (res: any) => {
         this.toastr.success(res.message, 'Success');
+        this.router.navigate(['/auth/login']);
       },
       error: (err: any) => {
         this.toastr.error(err.error.message, 'Error');
       },
       complete: () => {},
     });
+  }
+
+  onSelect(event: any) {
+    this.imgSrc = event.addedFiles[0];
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event: any) {
+    this.files.splice(this.files.indexOf(event), 1);
   }
 }

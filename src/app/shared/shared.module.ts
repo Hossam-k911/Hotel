@@ -12,6 +12,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
 @NgModule({
   declarations: [HeaderComponent, SideBarComponent, NavbarComponent],
   imports: [
@@ -31,6 +35,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
     MatPaginatorModule,
     MatTableModule,
+    NgxDropzoneModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -45,6 +52,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
     MatPaginatorModule,
     MatTableModule,
+    NgxDropzoneModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
 })
 export class SharedModule {}

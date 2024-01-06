@@ -27,7 +27,12 @@
           <td>{{ room.roomNumber }}</td>
           <td>
             <!-- {{ room.description }} -->
-            <img [src]="'http://upskilling-egypt.com:3000/' + room.images[0]" />
+            <!-- <img [src]="'http://upskilling-egypt.com:3000/' + room.images[0]" /> -->
+            <img
+              crossorigin="anonymous"
+              class="w-25"
+              [src]="'http://upskilling-egypt.com:3000/' + room.images[0]"
+            />
           </td>
           <td>{{ room.price }}</td>
           <td>{{ room.discount }}</td>
