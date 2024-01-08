@@ -4,6 +4,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeDashboardComponent } from './components/home-dashboard/home-dashboard.component';
 import { UsersDashboardComponent } from './components/users-dashboard/users-dashboard.component';
 import { AdsDashboardComponent } from './components/ads-dashboard/ads-dashboard.component';
+import { BookingsDashboardComponent } from './components/bookings-dashboard/bookings-dashboard.component';
+import { FacilitiesDashboardComponent } from './components/facilities-dashboard/facilities-dashboard.component';
 
 const routes: Routes = [
   {
@@ -19,8 +21,17 @@ const routes: Routes = [
             (m) => m.RoomsModule
           ),
       },
-      { path: 'users', component: UsersDashboardComponent },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./components/users-dashboard/users.module').then(
+            (m) => m.UsersModule
+          ),
+      },
+      // { path: 'users', component: UsersDashboardComponent },
       { path: 'ads', component: AdsDashboardComponent },
+      { path: 'bookings', component: BookingsDashboardComponent },
+      { path: 'facilities', component: FacilitiesDashboardComponent },
     ],
   },
   // { path: 'dashboard', component: DashboardComponent },

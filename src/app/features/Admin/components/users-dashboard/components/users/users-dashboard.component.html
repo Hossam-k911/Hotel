@@ -1,0 +1,50 @@
+<section>
+  <div class="container py-3">
+    <div class="row">
+      <div class="d-flex justify-content-between">
+        <div class="rooms-header">
+          <h2>Users Table Details</h2>
+          <span class="text-muted">You can check all details</span>
+        </div>
+        <button routerLink="add-room" class="btn btn-primary w-25">
+          <span class="px-2">Add New User </span>
+        </button>
+      </div>
+    </div>
+    <table class="table table-striped my-3">
+      <thead class="text-capitalize">
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Role</th>
+        <th>Country</th>
+        <th>View</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tableData">
+          <td>{{ item.userName }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.phoneNumber }}</td>
+          <td>{{ item.role }}</td>
+          <td>{{ item.country }}</td>
+          <td class="taxt-center">
+            <a href="" [routerLink]="'view/' + item._id" class=""
+              ><i class="fa-solid fa-eye px-2"></i
+            ></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="">
+      <mat-paginator
+        [length]="tableResponse?.totalCount"
+        [pageSizeOptions]="[5, 10, 50, 100]"
+        [pageSize]="tableResponse?.pageSize"
+        (page)="handlePageEvent($event)"
+        [pageIndex]="pageIndex"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</section>

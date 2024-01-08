@@ -9,6 +9,8 @@ import { UsersDashboardComponent } from './components/users-dashboard/users-dash
 import { RoomsDashboardComponent } from './components/rooms-dashboard/components/rooms/rooms-dashboard.component';
 import { AdsDashboardComponent } from './components/ads-dashboard/ads-dashboard.component';
 import { AddEditRoomsComponent } from './components/rooms-dashboard/components/add-edit-rooms/add-edit-rooms.component';
+import { BookingsDashboardComponent } from './components/bookings-dashboard/bookings-dashboard.component';
+import { FacilitiesDashboardComponent } from './components/facilities-dashboard/facilities-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AddEditRoomsComponent } from './components/rooms-dashboard/components/a
     RoomsDashboardComponent,
     AdsDashboardComponent,
     AddEditRoomsComponent,
+    BookingsDashboardComponent,
+    FacilitiesDashboardComponent,
   ],
   imports: [CommonModule, AdminRoutingModule, SharedModule],
 })

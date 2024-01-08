@@ -48,6 +48,18 @@ export class SideBarComponent {
       link: '/admin/ads',
       isActive: this.isAdmin(),
     },
+    {
+      icon: 'fa-solid fa-users ',
+      title: 'Bookings',
+      link: '/admin/bookings',
+      isActive: this.isAdmin(),
+    },
+    {
+      icon: 'fa-solid fa-layer-group ',
+      title: 'Facilities',
+      link: '/admin/facilities',
+      isActive: this.isAdmin(),
+    },
   ];
   onToggleClick() {
     this.isOpened = !this.isOpened;
