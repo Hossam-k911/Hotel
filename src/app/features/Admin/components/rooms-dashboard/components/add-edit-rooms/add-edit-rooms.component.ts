@@ -62,14 +62,17 @@ export class AddEditRoomsComponent {
     mydata.append('roomNumber', data.value.roomNumber),
       mydata.append('price', data.value.price),
       mydata.append('discount', data.value.discount),
-      mydata.append('capacity', data.value.capacity),
-      mydata.append('facilities', data.value.facilities[0]),
-      mydata.append('facilities', data.value.facilities[1]);
+      mydata.append('capacity', data.value.capacity);
+    // mydata.append('facilities', data.value.facilities[0]),
+    // mydata.append('facilities', data.value.facilities[1]);
     //  for (const [key,value] of myMap) {
     //   mydata.append(key,data.value[key])
     //   console.log(key,data.value[key]);
 
     //  }
+    for (const f of data.value.facilities) {
+      mydata.append('facilities', f);
+    }
 
     if (this.imgSrc == null) {
       // No Action
