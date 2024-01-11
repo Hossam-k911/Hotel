@@ -6,19 +6,19 @@
           <h2>Users Table Details</h2>
           <span class="text-muted">You can check all details</span>
         </div>
-        <button routerLink="add-room" class="btn btn-primary w-25">
+        <!-- <button routerLink="add-room" class="btn btn-primary w-25">
           <span class="px-2">Add New User </span>
-        </button>
+        </button> -->
       </div>
     </div>
     <table class="table table-striped my-3">
-      <thead class="text-capitalize">
+      <thead class="table-header">
         <th>User Name</th>
         <th>Email</th>
         <th>Phone Number</th>
         <th>Role</th>
         <th>Country</th>
-        <th>View</th>
+        <th>Actions</th>
       </thead>
       <tbody>
         <tr *ngFor="let item of tableData">
@@ -27,10 +27,31 @@
           <td>{{ item.phoneNumber }}</td>
           <td>{{ item.role }}</td>
           <td>{{ item.country }}</td>
-          <td class="taxt-center">
+          <!-- <td class="taxt-center">
             <a href="" [routerLink]="'view/' + item._id" class=""
               ><i class="fa-solid fa-eye px-2"></i
             ></a>
+          </td> -->
+
+          <td>
+            <button
+              class="table-button"
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button
+                [routerLink]="'view/' + item._id"
+                class="table-button"
+                mat-menu-room
+              >
+                <mat-icon>visibility</mat-icon>
+                <span>View</span>
+              </button>
+            </mat-menu>
           </td>
         </tr>
       </tbody>

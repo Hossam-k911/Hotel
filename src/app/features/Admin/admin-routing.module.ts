@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeDashboardComponent } from './components/home-dashboard/home-dashboard.component';
-import { UsersDashboardComponent } from './components/users-dashboard/users-dashboard.component';
 import { AdsDashboardComponent } from './components/ads-dashboard/ads-dashboard.component';
 import { BookingsDashboardComponent } from './components/bookings-dashboard/bookings-dashboard.component';
 import { FacilitiesDashboardComponent } from './components/facilities-dashboard/facilities-dashboard.component';

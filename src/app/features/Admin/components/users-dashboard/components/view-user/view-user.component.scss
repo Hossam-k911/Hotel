@@ -1,0 +1,40 @@
+// @import "../../../../../../assets/styles/abstracts/variables";
+section{
+    .row{
+
+       background-color:rgb(199, 211, 237); 
+       border-radius: 15px;
+       box-shadow: 1px 1px  10px #c3c7c651;
+        .user-image{
+            img{
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+                border:#203FC7 solid 1px;
+                box-shadow: 1px 1px  10px #c3c7c651;
+            }
+        }
+        .user-content{
+    
+            h2{
+                color: rgba(21, 44, 91, 1);
+
+                font-weight: 400;
+                font-size: 18px;
+                margin: 10px 0;
+                span{
+                color: #203FC7;
+
+                    font-size: 20px;
+                    font-weight: 500;
+                    padding: 0px 5px;
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+  button{
+    color: rgba(21, 44, 91, 1);
+
+  }
+}

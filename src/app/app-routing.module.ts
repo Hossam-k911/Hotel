@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'landing-page',
     // canActivate: [UserGuard, RolesGuard],
     loadChildren: () =>
-      import('./features/landing-page/landing-page/landing-page.module').then(
+      import('./features/landing-page/landing-page.module').then(
         (m) => m.LandingPageModule
       ),
   },

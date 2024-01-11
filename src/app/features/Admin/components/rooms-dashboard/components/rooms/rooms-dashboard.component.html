@@ -27,14 +27,14 @@
           <td>{{ room.roomNumber }}</td>
           <td>
             <!-- {{ room.description }} -->
-            <img [src]="'http://upskilling-egypt.com:3000/' + room.images[0]" />
+            <img style="width: 35rem" [src]="room.images[0]" />
           </td>
           <td>{{ room.price }}</td>
           <td>{{ room.discount }}</td>
           <td>{{ room.capacity }}</td>
           <td>
             <div *ngFor="let item of room.facilities">
-              <span> {{ item }}</span>
+              <span> {{ item.name }}</span>
             </div>
           </td>
           <td>

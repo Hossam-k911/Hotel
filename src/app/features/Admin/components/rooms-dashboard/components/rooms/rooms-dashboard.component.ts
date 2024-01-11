@@ -25,6 +25,7 @@ export class RoomsDashboardComponent {
   getAllRooms(Query: any) {
     this._AdminService.getRooms(Query).subscribe((res: any) => {
       this.rooms = res.data.rooms;
+      console.log(res.data);
       this.totalCount = res.data.totalCount;
     });
   }

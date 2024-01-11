@@ -1,0 +1,36 @@
+<section class="h-100">
+  <div class="container p-5">
+    <div class="row mt-5 p-3">
+      <div class="col-md-6">
+        <div class="user-content mt-2">
+          <h2><span>User Name:</span>{{ userData.userName }}</h2>
+          <h2><span>Phone Number:</span>{{ userData.phoneNumber }}</h2>
+          <h2><span>Email:</span>{{ userData.email }}</h2>
+          <h2><span>Country:</span>{{ userData.country }}</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="user-content mt-5">
+          <h2><span>Role:</span>{{ userData.role }}</h2>
+          <h2><span>Verified:</span>{{ userData.verified }}</h2>
+          <h2>
+            <span>Created At:</span
+            >{{ userData.createdAt | date : "dd-MM-YYYY" }}
+          </h2>
+          <h2>
+            <span>Updated At:</span
+            >{{ userData.updatedAt | date : "dd-MM-YYYY" }}
+          </h2>
+        </div>
+        <div class="mt-2 text-end">
+          <button
+            class="btn btn-primary px-5 text-white"
+            routerLink="/admin/users"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
