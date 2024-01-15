@@ -23,8 +23,15 @@ export class AddEditRoomsComponent {
     private _ActivatedRoute: ActivatedRoute,
     private _ToastrService: ToastrService,
     private _Router: Router
-  ) {
-    this.roomId = _ActivatedRoute.snapshot.params['id'];
+  ) {}
+  ngOnInit(): void {
+    this.roomId = this._ActivatedRoute.snapshot.params['id'];
+
+    this._ActivatedRoute.queryParams.subscribe((res: any) => {
+      if (res === 'view') {
+        this.roomForm.disable();
+      }
+    });
 
     if (this.roomId) {
       this.isUpdatePge = true;
@@ -32,8 +39,6 @@ export class AddEditRoomsComponent {
     } else {
       this.isUpdatePge = false;
     }
-  }
-  ngOnInit(): void {
     this.getAllFaclities();
   }
 
@@ -91,7 +96,7 @@ export class AddEditRoomsComponent {
           this._ToastrService.error(err.message);
         },
         complete: () => {
-          this._Router.navigate(['/admin/dashboard/dashboard/rooms/roomsHome']);
+          this._Router.navigate(['/admin/rooms']);
         },
       });
     } else {
@@ -102,7 +107,7 @@ export class AddEditRoomsComponent {
         },
         error: (err) => {},
         complete: () => {
-          this._Router.navigate(['/admin/dashboard/dashboard/rooms/roomsHome']);
+          this._Router.navigate(['/admin/rooms']);
         },
       });
     }

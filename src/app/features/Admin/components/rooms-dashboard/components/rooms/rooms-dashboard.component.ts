@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { AdminService } from '../../../../services/admin.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-rooms-dashboard',
   templateUrl: './rooms-dashboard.component.html',
@@ -16,7 +17,8 @@ export class RoomsDashboardComponent {
     page: 1,
   };
   constructor(
-    private _AdminService: AdminService // private _UsersService: UsersService, // private ActivatedRoute: ActivatedRoute, // private dialog: MatDialog, // private toastr: ToastrService
+    private _AdminService: AdminService,
+    private _Router: Router // private _UsersService: UsersService, // private ActivatedRoute: ActivatedRoute, // private dialog: MatDialog, // private toastr: ToastrService
   ) {
     this.getAllRooms(this.roomsQueryObj);
   }
@@ -34,7 +36,11 @@ export class RoomsDashboardComponent {
     this.getAllRooms(this.roomsQueryObj);
   }
 
-  viewRoom(room: any) {}
+  viewRoom(room: any) {
+    this._Router.navigate(['/admin/rooms/add-room', room._id], {
+      queryParams: { mode: 'view' },
+    });
+  }
 
   deleteRoom(room: any) {}
 
