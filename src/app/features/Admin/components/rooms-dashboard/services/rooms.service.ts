@@ -16,12 +16,12 @@ export class RoomsService {
     return this._HttpClient.get('room-facilities');
   }
   onGetRooms(data: any): Observable<any> {
-    return this._HttpClient.get('admin/rooms', { params: data });
+    return this._HttpClient.get('rooms', { params: data });
   }
   getRoombyId(id: string): Observable<any> {
-    return this._HttpClient.get(`admin/rooms/${id}`);
+    return this._HttpClient.get(`rooms/${id}`);
   }
   updateRoom(id: string, data: any): Observable<any> {
-    return this._HttpClient.put(`admin/rooms/${id}`, data);
+    return this._HttpClient.put(`rooms/${id}`, data);
   }
 }
