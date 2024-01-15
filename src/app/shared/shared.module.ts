@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [HeaderComponent, SideBarComponent, NavbarComponent],
@@ -38,6 +39,7 @@ import { MatSelectModule } from '@angular/material/select';
     NgxDropzoneModule,
     MatFormFieldModule,
     MatSelectModule,
+    TranslateModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -55,6 +57,7 @@ import { MatSelectModule } from '@angular/material/select';
     NgxDropzoneModule,
     MatFormFieldModule,
     MatSelectModule,
+    TranslateModule
   ],
 })
 export class SharedModule {}

@@ -24,7 +24,9 @@ export class HeadersInterceptor implements HttpInterceptor {
 
     let cloned = request.clone({
       setHeaders: newheaders,
-      url: $baseUrl + request.url,
+      // url: $baseUrl + request.url,
+      url: request.url.includes('assets') ? `${request.url}` : $baseUrl + `/${request.url}`
+
     });
 
     return next.handle(cloned);

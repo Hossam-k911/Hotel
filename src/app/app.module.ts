@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeadersInterceptor } from './core/Interceptors/headers/headers.interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingInterceptor } from './core/Interceptors/headers/spinner/loading.interceptor';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+
+}
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -19,7 +25,17 @@ import { LoadingInterceptor } from './core/Interceptors/headers/spinner/loading.
     SharedModule,
     HttpClientModule,
     FontAwesomeModule,
-    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    TranslateModule.forRoot(
+      {
+        loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+        }
+      }
+    )
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true },
@@ -27,4 +43,5 @@ import { LoadingInterceptor } from './core/Interceptors/headers/spinner/loading.
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+
+export class AppModule { }

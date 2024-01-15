@@ -1,1 +1,2 @@
-<p>nav-bar-landing-page works!</p>
+<button (click)="changeLanguage()"><i class="fa-solid fa-language"></i></button>
+<h3 [class]="_HelperService.textDir=='ltr'?'bg-danger':'bg-info'">{{'hello'|translate}}</h3>

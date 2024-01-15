@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { HelperService } from 'src/app/shared/services/helper.service';
 
 @Component({
   selector: 'app-nav-bar-landing-page',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class NavBarLandingPageComponent {
 
+  constructor(private translate: TranslateService, public _HelperService: HelperService) {
+
+
+  }
+
+  changeLanguage() {
+    this._HelperService.changeLanguage()
+  }
 }

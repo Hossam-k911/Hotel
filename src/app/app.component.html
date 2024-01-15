@@ -1,2 +1,6 @@
-<router-outlet></router-outlet>
-<ngx-spinner type="ball-scale-multiple" size="large"></ngx-spinner>
+<div [dir]="translate.currentLang == 'en' ? 'ltr' : 'rtl' ">
+  
+    <router-outlet></router-outlet>
+    <ngx-spinner type="ball-scale-multiple" size="large"></ngx-spinner>
+    <div>{{ 'hello' | translate }}</div>
+</div>

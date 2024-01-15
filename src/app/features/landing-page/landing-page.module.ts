@@ -13,6 +13,7 @@ import { HomeComponent } from './modules/home/components/home/home.component';
     LandingPageComponent,
     NavBarLandingPageComponent,
     FooterComponent,
+    
   ],
   imports: [CommonModule, LandingPageRoutingModule, SharedModule],
 })
